@@ -13,6 +13,8 @@ public class CarController : MonoBehaviour
 	[SerializeField] private Transform frontLeftWheelTransform, frontRightWheelTransform;
 	[SerializeField] private Transform rearLeftWheelTransform, rearRightWheelTransform;
 
+	[SerializeField] private RollCollider rollCollider;
+
 	[HideInInspector]
 	public float SteeringInput, AccelInput, BrakeInput = 0f;
 	private float currentSteerAngle, currentbreakForce;
@@ -24,6 +26,8 @@ public class CarController : MonoBehaviour
 
 		GetComponent<Rigidbody>().velocity = Vector3.zero;
 		GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+
+		rollCollider.IsRolled = false;
 
 		FixedUpdate();
 	}
@@ -67,5 +71,10 @@ public class CarController : MonoBehaviour
 		wheelCollider.GetWorldPose(out pos, out rot);
 		wheelTransform.rotation = rot;
 		wheelTransform.position = pos;
+	}
+
+	public bool IsRolled()
+	{
+		return rollCollider.IsRolled;
 	}
 }

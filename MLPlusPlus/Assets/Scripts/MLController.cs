@@ -36,17 +36,32 @@ public class MLController : Agent
 		float checkpointDistance = Vector3.Distance(transform.localPosition, checkpoints.checkpoints[targetCheckPoint].transform.localPosition);
 		sensor.AddObservation(checkpointDistance);
 
-		sensor.AddObservation(car.GetComponent<Rigidbody>().velocity);
+		Vector3 velocity = transform.InverseTransformDirection( car.GetComponent<Rigidbody>().velocity);
+		sensor.AddObservation(velocity);
 	}
 
 
 	public override void OnActionReceived(ActionBuffers actions)
 	{
+		if (car.IsRolled()) {
+			AddReward(-25f);
+			EndEpisode();
+		}
+
 		car.SteeringInput = Mathf.Clamp(actions.ContinuousActions[0], -1f, 1f);
 		car.AccelInput = Mathf.Clamp(actions.ContinuousActions[1], 0f, 1f);
 		car.BrakeInput = Mathf.Clamp(actions.ContinuousActions[2], 0f, 1f);
 
-		AddReward(-0.1f * Time.deltaTime);
+		AddReward(0.1f * Time.deltaTime);
+
+		Vector3 velocity = transform.InverseTransformDirection( car.GetComponent<Rigidbody>().velocity);
+		AddReward(0.1f * velocity.z * Time.deltaTime);
+
+		//AddReward(-0.01f * Mathf.Max(Mathf.Abs(actions.ContinuousActions[0]), 1f) - 1f);
+		//AddReward(-0.01f * Mathf.Max(Mathf.Abs(actions.ContinuousActions[1]), 1f) - 1f);
+		//AddReward(-0.01f * Mathf.Max(Mathf.Abs(actions.ContinuousActions[2]), 1f) - 1f);
+		
+		//AddReward(-0.001f * car.BrakeInput);
 	}
 
 	public override void Heuristic(in ActionBuffers actionsOut)
@@ -83,7 +98,7 @@ public class MLController : Agent
 			//EndEpisode();
 		}
 		else if (other.TryGetComponent<Wall>(out Wall wall)) {
-			AddReward(-1f);
+			AddReward(-50f);
 			EndEpisode();
 		}
 	}
