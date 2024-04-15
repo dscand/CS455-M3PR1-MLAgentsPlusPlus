@@ -1,0 +1,110 @@
+{
+    "MLController": {
+        "checkpoints": [
+            {
+                "steps": 21999958,
+                "file_path": "results\\DriveCar4_1\\MLController\\MLController-21999958.onnx",
+                "reward": 35.96643204159207,
+                "creation_time": 1713132337.7708497,
+                "auxillary_file_paths": [
+                    "results\\DriveCar4_1\\MLController\\MLController-21999958.pt"
+                ]
+            },
+            {
+                "steps": 22499987,
+                "file_path": "results\\DriveCar4_1\\MLController\\MLController-22499987.onnx",
+                "reward": 178.17394531690158,
+                "creation_time": 1713132720.928001,
+                "auxillary_file_paths": [
+                    "results\\DriveCar4_1\\MLController\\MLController-22499987.pt"
+                ]
+            },
+            {
+                "steps": 22999943,
+                "file_path": "results\\DriveCar4_1\\MLController\\MLController-22999943.onnx",
+                "reward": 191.88567861914635,
+                "creation_time": 1713133108.1792316,
+                "auxillary_file_paths": [
+                    "results\\DriveCar4_1\\MLController\\MLController-22999943.pt"
+                ]
+            },
+            {
+                "steps": 23499955,
+                "file_path": "results\\DriveCar4_1\\MLController\\MLController-23499955.onnx",
+                "reward": 91.99829850239414,
+                "creation_time": 1713133491.4150345,
+                "auxillary_file_paths": [
+                    "results\\DriveCar4_1\\MLController\\MLController-23499955.pt"
+                ]
+            },
+            {
+                "steps": 23999968,
+                "file_path": "results\\DriveCar4_1\\MLController\\MLController-23999968.onnx",
+                "reward": 189.0851275920868,
+                "creation_time": 1713133873.9239852,
+                "auxillary_file_paths": [
+                    "results\\DriveCar4_1\\MLController\\MLController-23999968.pt"
+                ]
+            },
+            {
+                "steps": 24499973,
+                "file_path": "results\\DriveCar4_1\\MLController\\MLController-24499973.onnx",
+                "reward": 187.06015996138254,
+                "creation_time": 1713134261.6156867,
+                "auxillary_file_paths": [
+                    "results\\DriveCar4_1\\MLController\\MLController-24499973.pt"
+                ]
+            },
+            {
+                "steps": 24999950,
+                "file_path": "results\\DriveCar4_1\\MLController\\MLController-24999950.onnx",
+                "reward": 170.75103818045721,
+                "creation_time": 1713134665.7788365,
+                "auxillary_file_paths": [
+                    "results\\DriveCar4_1\\MLController\\MLController-24999950.pt"
+                ]
+            },
+            {
+                "steps": 25499982,
+                "file_path": "results\\DriveCar4_1\\MLController\\MLController-25499982.onnx",
+                "reward": 193.62275478114253,
+                "creation_time": 1713135079.8755534,
+                "auxillary_file_paths": [
+                    "results\\DriveCar4_1\\MLController\\MLController-25499982.pt"
+                ]
+            },
+            {
+                "steps": 25999970,
+                "file_path": "results\\DriveCar4_1\\MLController\\MLController-25999970.onnx",
+                "reward": 190.9778127670288,
+                "creation_time": 1713135499.737657,
+                "auxillary_file_paths": [
+                    "results\\DriveCar4_1\\MLController\\MLController-25999970.pt"
+                ]
+            },
+            {
+                "steps": 26109649,
+                "file_path": "results\\DriveCar4_1\\MLController\\MLController-26109649.onnx",
+                "reward": 192.18193769454956,
+                "creation_time": 1713135592.1660838,
+                "auxillary_file_paths": [
+                    "results\\DriveCar4_1\\MLController\\MLController-26109649.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 26109649,
+            "file_path": "results\\DriveCar4_1\\MLController.onnx",
+            "reward": 192.18193769454956,
+            "creation_time": 1713135592.1660838,
+            "auxillary_file_paths": [
+                "results\\DriveCar4_1\\MLController\\MLController-26109649.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "1.0.0",
+        "torch_version": "2.2.2+cu121"
+    }
+}

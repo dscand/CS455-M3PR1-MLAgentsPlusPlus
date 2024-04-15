@@ -8,6 +8,7 @@ using Unity.VisualScripting;
 public class MLController : Agent
 {
 	CarController car;
+	public CarUI carUI;
 	
 	public Checkpoints checkpoints;
 	private int targetCheckPoint = 1;
@@ -44,7 +45,7 @@ public class MLController : Agent
 	public override void OnActionReceived(ActionBuffers actions)
 	{
 		if (car.IsRolled()) {
-			AddReward(-25f);
+			AddReward(-50f);
 			EndEpisode();
 		}
 
@@ -62,6 +63,11 @@ public class MLController : Agent
 		//AddReward(-0.01f * Mathf.Max(Mathf.Abs(actions.ContinuousActions[2]), 1f) - 1f);
 		
 		//AddReward(-0.001f * car.BrakeInput);
+
+
+		if (carUI) {
+			carUI.SetUI(car.AccelInput, car.BrakeInput, car.SteeringInput);
+		}
 	}
 
 	public override void Heuristic(in ActionBuffers actionsOut)

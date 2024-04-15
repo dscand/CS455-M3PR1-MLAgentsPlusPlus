@@ -121,6 +121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsRolled: 0
+  RollDelay: 2
 --- !u!1001 &6803637546343151144
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -332,7 +333,7 @@ MonoBehaviour:
     VectorActionDescriptions: []
     VectorActionSpaceType: 1
     hasUpgradedBrainParametersWithActionSpec: 1
-  m_Model: {fileID: 5022602860645237092, guid: b5c9de4a8a480da4b914ac701a495daa, type: 3}
+  m_Model: {fileID: 5022602860645237092, guid: a587faa6e9729c34bb2e029838dd0951, type: 3}
   m_InferenceDevice: 0
   m_BehaviorType: 0
   m_BehaviorName: MLController
