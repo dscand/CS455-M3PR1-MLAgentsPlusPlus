@@ -66,7 +66,8 @@ public class MLController : Agent
 
 
 		if (carUI) {
-			carUI.SetUI(car.AccelInput, car.BrakeInput, car.SteeringInput);
+			carUI.SetInputValues(car.AccelInput, car.BrakeInput, car.SteeringInput);
+			carUI.SetOutputValues(velocity.z);
 		}
 	}
 
